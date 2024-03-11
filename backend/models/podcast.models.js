@@ -1,4 +1,4 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const podcastSchema = new Schema(
@@ -23,7 +23,7 @@ const podcastSchema = new Schema(
             type: Number, 
             required: true
         },
-        views: {
+        likes: {
             type: Number,
             default: 0
         },

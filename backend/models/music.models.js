@@ -3,7 +3,7 @@ import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const musicSchema = new Schema(
     {
-        audioFile: {
+        videoFile: {
             type: String, // url
             required: true
         },
@@ -23,7 +23,7 @@ const musicSchema = new Schema(
             type: Number, 
             required: true
         },
-        views: {
+        likes: {
             type: Number,
             default: 0
         },

@@ -29,12 +29,12 @@ const userSchema = new Schema(
             type: String,   //URL
             required: true,
         },
-        creations: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Video"
-            }
-        ],
+        // creations: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: "Video"
+        //     }
+        // ],
         password: {
             type: String,
             required: [true, 'Password is required']
