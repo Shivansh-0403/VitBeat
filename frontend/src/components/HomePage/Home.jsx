@@ -1,3 +1,5 @@
+import Footer from "../Structural/Footer";
+import Navbar from "../Structural/Navbar";
 import About from "./About";
 import TopCreators from "./TopCreators";
 import robotHome from "/hack1.jpeg";
@@ -5,6 +7,7 @@ import robotHome from "/hack1.jpeg";
 function Home() {
     return (
         <div>
+            <Navbar />
             <section className="bg-white dark:bg-gray-900">
                 <div className="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
                     <div className="flex justify-center xl:w-1/2">
@@ -92,6 +95,7 @@ function Home() {
 
             <About />
             <TopCreators />
+            <Footer />
         </div>
     );
 }

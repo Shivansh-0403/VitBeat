@@ -1,8 +1,11 @@
-import React from 'react'
+import Card from "../Card"
+import Footer from "../Structural/Footer"
+import Navbar from "../Structural/Navbar"
 
 function Podcasts() {
     return (
         <div>
+            <Navbar />
             <section className="bg-white dark:bg-gray-900">
                 <div className="container flex flex-col px-6 py-10 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center">
                     <div className="w-full lg:w-1/2">
@@ -136,7 +139,10 @@ function Podcasts() {
                         </div>
                     </div> */}
                 </div>
+            <hr className="my-10 border-gray-200 dark:border-gray-700" />
             </section>
+
+            <Footer />
         </div>
     )
 }
