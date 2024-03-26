@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from "../../assets/vitbeatlogo.png"
 
-function Navbar() {
+function Navbar() { 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -11,11 +13,10 @@ function Navbar() {
         <nav className="relative bg-white shadow dark:bg-gray-800">
             <div className="container px-6 py-3 mx-auto md:flex">
                 <div className="flex items-center justify-between gap-5">
-                    <a href="#">
-                        <img className="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="Brand Logo" />
-                    </a>
+                    <Link to="/" className='text-white'>VITBeat
+                        {/* <img className="w-auto h-6 sm:h-7" src={logo} alt="Brand Logo" /> */}
+                    </Link>
 
-                    {/* Mobile menu button */}
                     <div className="flex lg:hidden">
                         <button
                             onClick={toggleMenu}

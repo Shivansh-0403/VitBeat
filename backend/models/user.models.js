@@ -8,9 +8,9 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            // lowercase: true,
-            // trim: true,
+            lowercase: true,
             index: true
+            // trim: true,
         },
         email: {
             type: String,
@@ -29,12 +29,9 @@ const userSchema = new Schema(
             type: String,   //URL
             required: true,
         },
-        // creations: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: "Video"
-        //     }
-        // ],
+        creations: {
+            type: Array,
+        },
         password: {
             type: String,
             required: [true, 'Password is required']

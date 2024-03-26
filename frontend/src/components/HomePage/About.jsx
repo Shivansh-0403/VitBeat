@@ -70,13 +70,9 @@ function About() {
             </section> */}
             <section className="bg-white dark:bg-gray-900">
                 <div className="container px-6 py-10 mx-auto">
-                    <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore our <br /> awesome <span className="underline decoration-blue-500">Components</span></h1>
+                    <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">At VITBeat <br /> we look <span className="underline decoration-blue-500">forward</span> to</h1>
 
-                    <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
-                    </p>
-
-                    <div className="grid grid-cols-3 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+                    <div className="grid gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3 sm:xl:grid-cols-1">
                         <div className="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
                             <span className="inline-block text-blue-500 dark:text-blue-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,10 +81,10 @@ function About() {
                                 </svg>
                             </span>
 
-                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
+                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">Foster Creativity</h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+                                Providing a space for students to unleash their creative potential through podcasts, music, blogs and event update.
                             </p>
 
                             <a href="#" className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
@@ -105,10 +101,10 @@ function About() {
                                 </svg>
                             </span>
 
-                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
+                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">Enhance Communication</h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+                                Keeping the VIT Bhopal community informed and connected with real-time event updates and personalized feeds.
                             </p>
 
                             <a href="#" className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
@@ -125,10 +121,10 @@ function About() {
                                 </svg>
                             </span>
 
-                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
+                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">Build Community</h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+                                Cultivating a sense of belonging by encouraging interaction, collaboration, and celebration among students.
                             </p>
 
                             <a href="#" className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
