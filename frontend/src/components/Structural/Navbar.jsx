@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../../assets/vitbeatlogo.png"
+// import logo from "../../assets/vitbeatlogo.png"
 
 function Navbar() { 
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ function Navbar() {
         <nav className="relative bg-white shadow dark:bg-gray-800">
             <div className="container px-6 py-3 mx-auto md:flex">
                 <div className="flex items-center justify-between gap-5">
-                    <Link to="/" className='text-white'>VITBeat
+                    <Link to="/" className='text-white text-lg'>VITBeat
                         {/* <img className="w-auto h-6 sm:h-7" src={logo} alt="Brand Logo" /> */}
                     </Link>
 
@@ -59,18 +59,18 @@ function Navbar() {
                     
 
                     <div className="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-                        <a href="#" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
+                        <Link to="/podcasts" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
                             Podcasts
-                        </a>
-                        <a href="#" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
+                        </Link>
+                        <Link to="/videos" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
                             Videos
-                        </a>
-                        <a href="#" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
+                        </Link>
+                        <Link to="/events" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
                             Events
-                        </a>
-                        <a href="#" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
+                        </Link>
+                        <Link to="/blogs" className="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">
                             Blogs
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative mt-4 md:mt-0">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3">

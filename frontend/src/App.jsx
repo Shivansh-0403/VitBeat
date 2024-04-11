@@ -16,20 +16,24 @@ function App() {
     const token = false
 
     return (
-        <Routes>
-            {/* {token && <Route path="/" element={<Home />} />} */}
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Navigate replace to="/login" />} />
-            <Route path="/forgot-password" element={<ForgotPass />} />
-            <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
-            <Route path='/podcasts' element={<Podcasts />} />
-            <Route path='/all-podcasts' element={<PodcastList />} />
-            {token && <Route path='/dashboard' element={<Dashboard />} />}
-            <Route path="/dashboard" element={<Navigate replace to="/login" />} />
-            <Route path='/podcast/:id' element={<ViewPodcasts />} />
-        </Routes>
+        <div className='dark:bg-black'>
+            <Routes>
+                {/* {token && <Route path="/" element={<Home />} />} */}
+                <Route path="/" element={<Home />} />
+
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Navigate replace to="/login" />} />
+                <Route path="/forgot-password" element={<ForgotPass />} />
+                <Route path='/reset-password/:id/:token' element={<ResetPassword />} />
+
+                <Route path='/podcasts' element={<Podcasts />} />
+                <Route path='/all-podcasts' element={<PodcastList />} />
+                {token && <Route path='/dashboard' element={<Dashboard />} />}
+                <Route path="/dashboard" element={<Navigate replace to="/login" />} />
+                <Route path='/podcast/:id' element={<ViewPodcasts />} />
+            </Routes>
+        </div>
     );
 }
 

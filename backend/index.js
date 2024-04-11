@@ -11,7 +11,8 @@ app.use(cors({
     credentials: true
 }))
 
-app.use(express.json({limit: "16kb"}))
+// app.use(express.json({limit: "16kb"}))
+app.use(express.json())
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
@@ -33,11 +34,10 @@ const connectDB = async () => {
 
 connectDB()
 .then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
     })
 })
 .catch((err) => {
     console.log("MONGO db connection failed !!! ", err);
 })
-

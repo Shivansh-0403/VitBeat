@@ -22,8 +22,8 @@ const userSchema = new Schema(
         fullName: {
             type: String,
             required: true,
-            // trim: true, 
             index: true
+            // trim: true, 
         },
         profilePic: {
             type: String,   //URL
@@ -45,12 +45,12 @@ const userSchema = new Schema(
     }
 )
 
-// userSchema.pre("save", async function (next) {
-//     if(!this.isModified("password")) return next();
+userSchema.pre("save", async function (next) {
+    if(!this.isModified("password")) return next();
 
-//     this.password = await bcrypt.hash(this.password, 10)
-//     next()
-// })
+    this.password = await bcrypt.hash(this.password, 12)
+    next()
+})
 
 // userSchema.methods.isPasswordCorrect = async function(password){
 //     return await bcrypt.compare(password, this.password)
