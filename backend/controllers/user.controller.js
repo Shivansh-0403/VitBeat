@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
         // }
 
         // const avatarLocalPath = req.files?.avatar[0]?.path
-        console.log(req.file);
+        // console.log(req.file);
         const avatarLocalPath = req.file?.path
 
         if (!avatarLocalPath) {

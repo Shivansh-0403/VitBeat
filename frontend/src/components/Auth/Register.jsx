@@ -28,11 +28,11 @@ const Register = () => {
 
         try {
             const formData = new FormData();
-            formData.append('avatar', file);
             formData.append('username', userData.username);
             formData.append('email', userData.email);
             formData.append('fullname', userData.fullname);
             formData.append('password', userData.password);
+            formData.append('avatar', file);
             console.log(userData);
             const response = await axios.post('/api/user/register', formData, {
                 headers: {
@@ -92,7 +92,7 @@ const Register = () => {
                             onChange={handleChange} />
 
                         <input
-                            className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="text"
+                            className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="password"
                             name="password"
                             id="password"
                             placeholder='Enter Your password'
