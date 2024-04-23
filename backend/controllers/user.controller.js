@@ -1,4 +1,4 @@
-import { User } from "../models/user.model.js"
+import { User } from "../models/user.models.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js"
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose"
