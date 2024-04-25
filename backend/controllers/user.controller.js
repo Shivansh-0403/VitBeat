@@ -24,22 +24,23 @@ const registerUser = async (req, res) => {
         // }
 
         // const avatarLocalPath = req.files?.avatar[0]?.path
-        // console.log(req.file);
-        const avatarLocalPath = req.file?.path
+        console.log(req.file);
+        const avatarLocalPath = req.file.path
 
         if (!avatarLocalPath) {
             throw new Error("Avatar file is required")
         }
 
         const avatar = await uploadOnCloudinary(avatarLocalPath)
-
+        console.log(avatar)
         // const user = await User.create({ username, email, fullname, avatar, password });
         const user = await User.create({
             username,
             email,
             fullname,
             avatar: avatar?.url || "",
-            password,
+            creations: [],
+            password
         })
 
         if (!user) {

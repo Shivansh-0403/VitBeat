@@ -8,12 +8,14 @@ import PodcastList from './components/Podcasts/PodcastList';
 import Podcasts from './components/Podcasts/Podcasts';
 import Dashboard from './components/Dashboard/Dashboard';
 import ViewPodcasts from './components/Podcasts/ViewPodcasts';
+import { useSelector } from "react-redux"
 
 // import { useSelector } from 'react-redux';
 
 function App() {
-    // const token = useSelector(state => state.userLoggedIn);
-    const token = false
+    const token = useSelector(state => state.userLoggedIn);
+    // const token = localStorage.getItem('accessToken')
+    // const token = false
 
     return (
         <div className='dark:bg-black'>

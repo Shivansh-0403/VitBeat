@@ -15,12 +15,12 @@ const userSchema = new Schema(
             required: true,
             unique: true,
         },
-        fullName: {
+        fullname: {
             type: String,
             required: true,
             index: true
         },
-        profilePic: {
+        avatar: {
             type: String,   // Cloudinary URL
             required: true,
         },

@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import { setUser, setLoginStatus } from '../../features/userSlice';
 import { Link, useNavigate } from 'react-router-dom';
 
-
-
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
