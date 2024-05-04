@@ -23,7 +23,7 @@ const podcastSchema = new Schema(
             type: Number, 
             required: true
         },
-        likes: {
+        views: {
             type: Number,
             default: 0
         },

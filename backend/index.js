@@ -50,4 +50,6 @@ connectDB()
 })
 
 import userRouter from './routes/user.route.js'
+import podcastRouter from './routes/podcast.route.js'
 app.use("/api/user", userRouter)
+app.use("/api/podcast", podcastRouter)
