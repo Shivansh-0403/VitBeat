@@ -32,14 +32,16 @@ const uploadPodcast = async (req, res) => {
         const avatar = await uploadOnCloudinary(avatarLocalPath)
         console.log(avatar)
         // const user = await User.create({ username, email, fullname, avatar, password });
-        const user = await User.create({
-            username,
-            email,
-            fullname,
-            avatar: avatar?.url || "",
-            creations: [],
-            password
-        })
+        // const user = await User.create({
+        //     username,
+        //     email,
+        //     fullname,
+        //     avatar: avatar?.url || "",
+        //     creations: [],
+        //     password
+        // })
+
+        
 
         if (!user) {
             throw new Error('User register unsuccessful');
