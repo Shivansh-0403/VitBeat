@@ -12,6 +12,6 @@ router.route("/register").post(upload.single("avatar"), registerUser)
 router.route("/login").post(loginUser)
 router.route("/logout").post(logoutUser)
 router.route("/forgot-password").post(forgotPassword)
-router.get("/reset-password/:id/:token", resetPassword)
+router.route("/reset-password/:id/:token").post(resetPassword)
 
 export default router

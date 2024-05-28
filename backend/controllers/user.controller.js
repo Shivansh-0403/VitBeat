@@ -3,6 +3,13 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js"
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose"
 import { transporter } from "../utils/nodemailer.js"
+import dotenv from "dotenv"
+import bcrypt from "bcrypt"
+
+
+dotenv.config({
+    path: './.env'
+})
 
 const registerUser = async (req, res) => {
     try {
@@ -176,52 +183,108 @@ const logoutUser = async (req, res) => {
 }
 
 const forgotPassword = async (req, res) => {
-    try {
-        const email = req.body.email
-
-        if (email == "") {
-            throw new Error("Please provide an email address")
-        }
-
-        const user = await User.findOne({ email })
-        if (!user) {
-            throw new Error("No user found with this mail id.")
-        }
-
-        const token = jwt.sign({id: user._id}, process.env.TOKEN_SECRET, {expiresIn: "1h"} )
-        const mailDetails = {
-            from: {
-                name: "Srivastava Group of Industries",
-                address: process.env.USER_EMAIL
-            },
-            to: email,
-            subject: "Mail regarding password reset",
-            text: "Here is your link to reset password:-" + `http://localhost:5173/reset-password/${user._id}/${token}`,
-            // html: "<h1>Hello World</h1><p>This is a test email.</p>",
-        }
-
-        const sendMail = async (transporter, mailOptions) => {
-            try {
-                await transporter.sendMail(mailOptions);
-                console.log("Email has been sent successfully..");
-            } catch (error) {
-                console.log(error);
+    const { email } = req.body;
+    User.findOne({ email: email })
+        .then(user => {
+            if (!user) {
+                return res.status(404).json("user does not exist");
             }
-        }
-        sendMail(transporter, mailDetails)
+            const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET, { expiresIn: 100000 })
 
-        res.status(200).json(
-            {
-                message: "Email sent successfully"
+            // var mailOptions = {
+            //     from: 'khetibuddy001@gmail.com',
+            //     to: email,
+            //     subject: 'Reset Password',
+            //     text: `http://localhost:5173/reset-password/${user._id}/${token}`
+            // };
+            const mailOptions = {
+                from: {
+                    name: "Srivastava Group of Industries",
+                    address: process.env.USER_EMAIL
+                },
+                to: email,
+                subject: "Mail regarding password reset",
+                text: "Here is your link to reset password:-" + `http://localhost:5173/reset-password/${user._id}/${token}`,
+                // html: "<h1>Hello World</h1><p>This is a test email.</p>",
             }
-        )
-    } catch (error) {
-        res.status(401).json(
-            {
-                message: "Error occurred while sending the email" + error
-            }
-        )
-    }
+    
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    res.status(200).json("email sent successfully");
+                    console.log('Email sent: ' + info.response);
+                }
+            });
+
+        })
+
+    // try {
+    //     const email = req.body.email
+
+    //     if (email == "") {
+    //         throw new Error("Please provide an email address")
+    //     }
+
+    //     const user = await User.findOne({ email })
+    //     // .then((user) => {
+
+    //     // })
+
+
+
+    //     console.log(email);
+    //     if (!user) {
+    //         throw new Error("No user found with this mail id.")
+    //     }
+
+    //     const token = jwt.sign({ id: user._id }, process.env.TOKEN_SECRET, { expiresIn: 100000 })
+    //     console.log(token);
+        // const mailDetails = {
+        //     from: {
+        //         name: "Srivastava Group of Industries",
+        //         address: process.env.USER_EMAIL
+        //     },
+        //     to: email,
+        //     subject: "Mail regarding password reset",
+        //     text: "Here is your link to reset password:-" + `http://localhost:5173/reset-password/${user._id}/${token}`,
+        //     // html: "<h1>Hello World</h1><p>This is a test email.</p>",
+        // }
+
+    //     const sendMailFunc = async (transporter, mailDetails) => {
+    //         try {
+    //             console.log(mailDetails);
+    //             await transporter.sendMail(mailDetails);
+    //             console.log("Email has been sent successfully..");
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    //     sendMailFunc(transporter, mailDetails)
+
+
+    //     // transporter.sendMail(mailDetails, function (error, info) {
+    //     //     if (error) {
+    //     //         console.log(error);
+    //     //     } else {
+    //     //         console.log('Email sent: ' + info.response);
+    //     //     }
+    //     // });
+    //     // sendMailPlease{(transporter, mailDetails)
+
+    //     res.status(200).json(
+    //         {
+    //             message: "Email sent successfully"
+    //         }
+    //     )
+    // } catch (error) {
+    //     res.status(401).json(
+    //         {
+    //             message: "Error occurred while sending the email" + error
+    //         }
+    //     )
+    // }
 }
 
 const resetPassword = async (req, res) => {
