@@ -38,7 +38,7 @@ const Login = () => {
     
             dispatch(setUser(storeUser));
             dispatch(setLoginStatus(true));
-            navigate("/");
+            navigate("/dashboard");
         } catch (error) {
             console.error("Error: ", error);
             window.alert(error.message || "Login failed. Please try again.");
