@@ -1,14 +1,14 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
-const musicSchema = new Schema(
+const videoSchema = new Schema(
     {
         videoFile: {
-            type: String, // url
+            type: String, //cloudinary url
             required: true
         },
-        poster: {
-            type: String, // url
+        thumbnail: {
+            type: String, //cloudinary url
             required: true
         },
         title: {
@@ -19,18 +19,10 @@ const musicSchema = new Schema(
             type: String, 
             required: true
         },
-        duration: {
-            type: Number, 
-            required: true
-        },
-        likes: {
+        views: {
             type: Number,
             default: 0
         },
-        // isPublished: {
-        //     type: Boolean,
-        //     default: true
-        // },
         owner: {
             type: Schema.Types.ObjectId,
             ref: "User"
@@ -41,6 +33,6 @@ const musicSchema = new Schema(
     }
 )
 
-musicSchema.plugin(mongooseAggregatePaginate)
+// podcastSchema.plugin(mongooseAggregatePaginate)
 
-export const Music = mongoose.model("Music", musicSchema)
+export const Video = mongoose.model("Video", videoSchema)

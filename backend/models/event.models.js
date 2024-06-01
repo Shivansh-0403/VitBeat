@@ -1,12 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
-const podcastSchema = new Schema(
+const eventSchema = new Schema(
     {
-        videoFile: {
-            type: String, //cloudinary url
-            required: true
-        },
         thumbnail: {
             type: String, //cloudinary url
             required: true
@@ -19,9 +15,13 @@ const podcastSchema = new Schema(
             type: String, 
             required: true
         },
-        views: {
+        fees: {
             type: Number,
             default: 0
+        },
+        link: {
+            type: String,
+            required: true
         },
         owner: {
             type: Schema.Types.ObjectId,
@@ -35,4 +35,4 @@ const podcastSchema = new Schema(
 
 // podcastSchema.plugin(mongooseAggregatePaginate)
 
-export const Podcast = mongoose.model("Podcast", podcastSchema)
+export const Event = mongoose.model("Event", eventSchema)
